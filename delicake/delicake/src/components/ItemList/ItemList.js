@@ -1,11 +1,11 @@
 import React from 'react';
 import Item from '../Item/Item';
-const ItemList = ({item}) => {
+const ItemList = ({products}) => {
   return (
     <div className='grid grid-cols-4 m-[30px]'>
         {
-         item.map(i=>
-            <Item key={i.id}name={i.name} price={i.price} id={i.id} img={i.img} product={i} />          )
+         products.map(p=>
+            <Item key={p.id} name={p.name} price={p.price} id={p.id} img={p.img} product={p} />          )
         }
     </div>
   )
