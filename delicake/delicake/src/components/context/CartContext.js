@@ -9,12 +9,11 @@ const CartContextProvider=({children})=>{
         const cantidad= cartList.some((prod)=> prod.id === producto.id)
         if(!cantidad){
             const encontrar= json.find((prod)=>prod.id === producto.id) 
-            let newProduct= {...encontrar, quantity: cantidadNueva}
-            setCartList(...cartList, newProduct)
+            setCartList(cartList.push({...encontrar, quantity: cantidadNueva}))
         }else{
             const encontrar= cartList.find((prod)=>prod.id===producto.id)
-            encontrar.quantity=encontrar.quantity + cantidadNueva
-            setCartList(...cartList,encontrar)
+            encontrar.quantity=+cantidadNueva
+            setCartList(cartList)
         }
         console.log(cartList)
     }
