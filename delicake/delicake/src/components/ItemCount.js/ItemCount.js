@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react'
 import { useContext } from 'react'
-import { CartContext } from '../context/CartContext'
+import { CartContext } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const ItemCount = ({item}) => {
   const {addToCart}=useContext(CartContext)
@@ -24,7 +25,7 @@ const ItemCount = ({item}) => {
       <p className='text-[20px] text-gray-500'>{count}</p>
       <button className='bg-pink-200 p-[3px_5px] text-white rounded-[2px] text-[15px]'>-</button>
       <div className='pt-[30px]'>
-      <button onClick={()=> addToCart(item, count)} >comprar</button>
+      <Link to={"/"} onClick={()=> addToCart(item, count)} >comprar</Link>
       </div>
     </div>
   )
