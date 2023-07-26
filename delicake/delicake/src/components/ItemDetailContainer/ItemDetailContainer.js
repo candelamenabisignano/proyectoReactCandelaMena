@@ -19,7 +19,6 @@ const ItemDetailContainer = () => {
   return (
     
     <div>
-
       <ItemDetail item={producto}/>
     </div>
   )

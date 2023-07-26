@@ -16,7 +16,7 @@ const ItemCount = () => {
         })
     })
   return (
-    <div className='flex gap-7 pt-[30px]'>
+    <div className='flex gap-7 pt-[30px] pb-[30px]'>
       <button className='bg-pink-200 p-[3px_5px] text-white rounded-[2px] text-[15px]'>+</button>
       <p className='text-[20px] text-gray-500'>{count}</p>
       <button className='bg-pink-200 p-[3px_5px] text-white rounded-[2px] text-[15px]'>-</button>

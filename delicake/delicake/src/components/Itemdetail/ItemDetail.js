@@ -1,8 +1,12 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount.js/ItemCount'
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
+
 
 const ItemDetail = ({item}) => {
+  const {addToCart}=useContext(CartContext)
   return (
     <div className='flex justify-center mt-[20px] mb-[40px]'>
     <div className='flex justify-around items-center pl-[50px] pr-[50px] rounded-[10px] border-pink-200 border-[3px] h-[500px] w-[1100px] bg-white'>
@@ -14,6 +18,7 @@ const ItemDetail = ({item}) => {
         <h3>{item.description}</h3>
         <h2 className='text-[20px] pt-[10px]'>${item.price}</h2>
         <ItemCount/>
+        <button onClick={()=> addToCart(item, parseInt(document.querySelector('div div div div p').innerHTML))}>comprar</button>
       </div>
     </div>
     </div>
