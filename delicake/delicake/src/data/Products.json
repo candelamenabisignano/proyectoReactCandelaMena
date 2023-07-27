@@ -5,8 +5,7 @@
         "category": "drinks",
         "img":"../img/agua.jpg",
         "price": 220,
-        "description": "agua smart water 500ml",
-        "quantity":0
+        "description": "agua smart water 500ml"
     },
     {
         "id":2,
@@ -14,8 +13,7 @@
         "category": "drinks",
         "img":"../img/coca-cola-zero.png",
         "price": 530,
-        "description": "coca cola zero 500ml",
-        "quantity":0
+        "description": "coca cola zero 500ml"
     },
     {
         "id":3,
@@ -23,8 +21,7 @@
         "category": "drinks",
         "img":"../img/aquarius-de-pera.jpg",
         "price": 320,
-        "description": "aquarius de pera 500ml",
-        "quantity":0
+        "description": "aquarius de pera 500ml"
     },
     {
         "id":4,
@@ -32,8 +29,7 @@
         "category": "drinks",
         "img":"../img/jugo-naranja.jpg",
         "price": 700,
-        "description": "jugo de naranja exprimido por nuestro personal, ideal para una gran merienda con alguna de nuestras opciones dulces.",
-        "quantity":0
+        "description": "jugo de naranja exprimido por nuestro personal, ideal para una gran merienda con alguna de nuestras opciones dulces."
     },
     {
         "id":5,
@@ -41,8 +37,7 @@
         "category": "drinks",
         "img":"../img/milshake-oreo.jpg",
         "price": 1710,
-        "description": "batido de leche con oreo y crema batida, una gran opcion de merienda.",
-        "quantity":0
+        "description": "batido de leche con oreo y crema batida, una gran opcion de merienda."
     },
     {
         "id":6,
@@ -50,8 +45,7 @@
         "category": "drinks",
         "img":"../img/milshake-frutilla.jpg",
         "price": 1660,
-        "description": "batido de leche con frutillas, crema batida y sirope de frutilla, para acompañar una opcion dulce de merienda.",
-        "quantity":0
+        "description": "batido de leche con frutillas, crema batida y sirope de frutilla, para acompañar una opcion dulce de merienda."
     },
     {
         "id":7,
@@ -59,8 +53,7 @@
         "category": "cakes",
         "img":"../img/chocotorta.jpg",
         "price": 1550,
-        "description": "torta de tres capas de chocolinas remojadas en cafe, y entre sus capas un relleno indescriptible con una mezcla de dulce de leche y queso crema que tu paladar agradece.",
-        "quantity":0
+        "description": "torta de tres capas de chocolinas remojadas en cafe, y entre sus capas un relleno indescriptible con una mezcla de dulce de leche y queso crema que tu paladar agradece."
     },
     {
         "id":8,
@@ -68,8 +61,7 @@
         "category": "cakes",
         "img":"../img/cheesecake.jpg",
         "price": 1400,
-        "description": "torta con queso mascarpone, una base de galletas de vainilla y una salsa de frutos rojos por arriba que agradaran tu tarde.",
-        "quantity":0
+        "description": "torta con queso mascarpone, una base de galletas de vainilla y una salsa de frutos rojos por arriba que agradaran tu tarde."
     },
     {
         "id":9,
@@ -77,8 +69,7 @@
         "category": "cakes",
         "img":"../img/torta-oreo.jpg",
         "price": 2000,
-        "description": "torta con base de galletas oreo, crema hecha a base del relleno de la galleta oreo y sirope de chocolate y oreos por arriba que les encantaran a los fanticos de la celebre galleta.",
-        "quantity":0
+        "description": "torta con base de galletas oreo, crema hecha a base del relleno de la galleta oreo y sirope de chocolate y oreos por arriba que les encantaran a los fanticos de la celebre galleta."
     },
     {
         "id":10,
@@ -86,8 +77,7 @@
         "category": "cakes",
         "img":"../img/torta-matilda.jpg",
         "price": 1800,
-        "description": "torta con bizcochuelode chocolate, relleno de mousse de chocolate y bañada en chocolate que definitivamente es una gran opcion para los fanaticos de la torta de Bruce.",
-        "quantity":0
+        "description": "torta con bizcochuelode chocolate, relleno de mousse de chocolate y bañada en chocolate que definitivamente es una gran opcion para los fanaticos de la torta de Bruce."
     },
     {
         "id":11,
@@ -95,8 +85,7 @@
         "category": "cakes",
         "img":"../img/lemon-pie.jpg",
         "price": 900,
-        "description": "torta con base de galletas de vainilla, relleno con jugo de limon y merengue con ralladura de limon que le dara un giro inesperado a tu merienda.",
-        "quantity":0
+        "description": "torta con base de galletas de vainilla, relleno con jugo de limon y merengue con ralladura de limon que le dara un giro inesperado a tu merienda."
     },
     {
         "id":12,
@@ -104,8 +93,7 @@
         "category": "cakes",
         "img":"../img/torta-balcarce.jpg",
         "price": 1600,
-        "description": "torta a base de bizcochuelo esponjoso, rellena de dulce de leche y cubierta con merengue italiano tostado",
-        "quantity":0
+        "description": "torta a base de bizcochuelo esponjoso, rellena de dulce de leche y cubierta con merengue italiano tostado"
     },
     {
         "id":13,
@@ -113,8 +101,7 @@
         "category": "cakes",
         "img":"../img/torta-frutillas-con-crema.jpg",
         "price": 1000,
-        "description": "torta con base de galletas de vainilla, relleno con crema y frutillas picadas y decorada con caramelo y frutillas.",
-        "quantity":0
+        "description": "torta con base de galletas de vainilla, relleno con crema y frutillas picadas y decorada con caramelo y frutillas."
     },
     {
         "id":14,
@@ -122,8 +109,7 @@
         "category": "cakes",
         "img":"../img/crumble-manzana.jpg",
         "price": 1300,
-        "description": "torta con base de galletas de vainilla, relleno con manzanas verdes y canela y cubierto con azucar mascabo.",
-        "quantity":0
+        "description": "torta con base de galletas de vainilla, relleno con manzanas verdes y canela y cubierto con azucar mascabo."
     },
     {
         "id":15,
@@ -131,8 +117,7 @@
         "category": "cakes",
         "img":"../img/red-velvet.jpg",
         "price": 1500,
-        "description": "torta con bizcochuelo a base de cacao y colorante rojo con relleno de queso crema.",
-        "quantity":0
+        "description": "torta con bizcochuelo a base de cacao y colorante rojo con relleno de queso crema."
     },
     {
         "id":16,
@@ -140,8 +125,7 @@
         "category": "muffins",
         "img":"../img/muffin-vainilla.jpg",
         "price": 320,
-        "description": "muffin hecho a base de bizcocho de vainilla.",
-        "quantity":0
+        "description": "muffin hecho a base de bizcocho de vainilla."
     },
     {
         "id":17,
@@ -149,8 +133,7 @@
         "category": "muffins",
         "img":"../img/muffin-vainilla-chips.jpg",
         "price": 430,
-        "description": "muffin hecho a base de bizcocho de vainilla y chips de chocolate.",
-        "quantity":0
+        "description": "muffin hecho a base de bizcocho de vainilla y chips de chocolate."
     },
     {
         "id":18,
@@ -158,8 +141,7 @@
         "category": "muffins",
         "img":"../img/muffin-chocolate.jpg",
         "price": 360,
-        "description": "muffin hecho a base de bizcocho de chocolate.",
-        "quantity":0
+        "description": "muffin hecho a base de bizcocho de chocolate."
     },
     {
         "id":19,
@@ -167,8 +149,7 @@
         "category": "muffins",
         "img":"../img/muffin-chocolate-chips.jpg",
         "price": 400,
-        "description": "muffin hecho a base de bizcocho de chocolate y chips de chocolate.",
-        "quantity":0
+        "description": "muffin hecho a base de bizcocho de chocolate y chips de chocolate."
     },
     {
         "id":20,
@@ -176,8 +157,7 @@
         "category": "muffins",
         "img":"../img/muffin-arandanos.jpg",
         "price":450,
-        "description": "muffin hecho a base de bizcocho de vainilla con arandanos.",
-        "quantity":0
+        "description": "muffin hecho a base de bizcocho de vainilla con arandanos."
     },
     {
         "id":21,
@@ -185,8 +165,7 @@
         "category": "muffins",
         "img":"../img/muffin-red-velvet.jpg",
         "price": 600,
-        "description": "muffin hecho a base de bizcocho de chocolate con colorante rojo, chips de chocolate blancas y queso crema como topping.",
-        "quantity":0
+        "description": "muffin hecho a base de bizcocho de chocolate con colorante rojo, chips de chocolate blancas y queso crema como topping."
     },
     {
         "id":22,
@@ -194,8 +173,7 @@
         "category": "muffins",
         "img":"../img/muffin-oreo.jpg",
         "price": 550,
-        "description": "muffin hecho a base de bizcocho de vainilla con oreos picadas y crema a base de relleno de oreo y una oreo como toppings.",
-        "quantity":0
+        "description": "muffin hecho a base de bizcocho de vainilla con oreos picadas y crema a base de relleno de oreo y una oreo como toppings."
     },
     {
         "id":23,
@@ -203,8 +181,7 @@
         "category": "macarons",
         "img":"../img/macaron-chocolate.jpg",
         "price": 350,
-        "description": "macaron con tapas sabor chocolate y con relleno de mousse de chocolate.",
-        "quantity":0
+        "description": "macaron con tapas sabor chocolate y con relleno de mousse de chocolate."
     },
     {
         "id":24,
@@ -212,8 +189,7 @@
         "category": "macarons",
         "img":"../img/macaron-limon.jpg",
         "price": 400,
-        "description": "macaron con tapas con ralladura de limon y con relleno de jugo de limon.",
-        "quantity":0
+        "description": "macaron con tapas con ralladura de limon y con relleno de jugo de limon."
     },
     {
         "id":25,
@@ -221,8 +197,7 @@
         "category": "macarons",
         "img":"../img/macaron-frutilla.jpg",
         "price": 550,
-        "description": "macaron con tapas con colorante rosa y con relleno con frutillas licuadas.",
-        "quantity":0
+        "description": "macaron con tapas con colorante rosa y con relleno con frutillas licuadas."
     },
     {
         "id":26,
@@ -230,8 +205,7 @@
         "category": "macarons",
         "img":"../img/macaron-pistacho.jpg",
         "price": 500,
-        "description": "macaron con tapas con pedacitos de pistacho y colorante verde, y con un relleno de pistachos y chocolate blanco.",
-        "quantity":0
+        "description": "macaron con tapas con pedacitos de pistacho y colorante verde, y con un relleno de pistachos y chocolate blanco."
     },
     {
         "id":27,
@@ -239,8 +213,7 @@
         "category": "macarons",
         "img":"../img/macaron-red-velvet.jpg",
         "price": 755,
-        "description": "macaron con tapas de cacao y colorante rojo, y con un relleno de queso crema dulce.",
-        "quantity":0
+        "description": "macaron con tapas de cacao y colorante rojo, y con un relleno de queso crema dulce."
     },
     {
         "id":28,
@@ -248,8 +221,7 @@
         "category": "macarons",
         "img":"../img/macaron-frambuesa.jpg",
         "price": 640,
-        "description": "macaron con tapas de frambuesa liofilizadas y con un relleno de frambuesas frescas.",
-        "quantity":0
+        "description": "macaron con tapas de frambuesa liofilizadas y con un relleno de frambuesas frescas."
     },
     {
         "id":29,
@@ -257,8 +229,7 @@
         "category": "macarons",
         "img":"../img/macaron-caramelo-salado.jpg",
         "price": 650,
-        "description": "macaron con tapas simples y con un relleno de crema de mantequilla casera con caramelo salado.",
-        "quantity":0
+        "description": "macaron con tapas simples y con un relleno de crema de mantequilla casera con caramelo salado."
     },
     {
         "id":30,
@@ -266,7 +237,6 @@
         "category": "macarons",
         "img":"../img/macaron-nutella.jpg",
         "price": 700,
-        "description": "macaron con tapas de cacao en polvo y con un relleno de cacao en polvo y nutella.",
-        "quantity":0
+        "description": "macaron con tapas de cacao en polvo y con un relleno de cacao en polvo y nutella."
     }
 ]

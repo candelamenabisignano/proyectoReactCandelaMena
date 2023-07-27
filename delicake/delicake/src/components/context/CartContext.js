@@ -32,8 +32,8 @@ const CartContextProvider=({children})=>{
     }
 
     const getQuantity=(carrito)=>{
-        let cantidades=carrito.reduce((i,acc)=>acc=acc+i.quantity,0)
-        console.log(cantidades)
+        let cantidades=carrito.reduce((acc, i)=>acc+i.quantity,0)
+        return cantidades
     }
 
     const paintCart=(cartList)=>{
@@ -43,6 +43,7 @@ const CartContextProvider=({children})=>{
             )
         })
     }
+
     return(
         <CartContext.Provider value={{cartList, addToCart, clearCart, removeFromCart, getQuantity, paintCart}}>
             {children}

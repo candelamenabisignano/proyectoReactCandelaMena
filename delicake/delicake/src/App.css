@@ -1,0 +1,10 @@
+.swal-button{
+    background-color: #ffccee;
+};
+.swal-overlay{
+    background-color: rgb(21, 247, 0);
+}
+
+.swal-button:not([disabled]):hover{
+    background-color: #ffccee;
+}
