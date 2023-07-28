@@ -1,7 +1,6 @@
 
 import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount.js/ItemCount'
-
 const ItemDetail = ({item}) => {
   return (
     <div className='flex justify-center mt-[20px] mb-[40px]'>

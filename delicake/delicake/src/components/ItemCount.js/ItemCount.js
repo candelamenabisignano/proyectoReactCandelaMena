@@ -2,9 +2,10 @@
 import React, { useState } from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams} from 'react-router-dom';
 import swal from 'sweetalert';
 import "../../App.css"
+
 
 const ItemCount = ({item}) => {
   const {addToCart}=useContext(CartContext)

@@ -2,9 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities{
-    .scrollbar::-webkit-scrollbar-track{
-        background-color: black;
-    }
-}
+
 

@@ -23,29 +23,41 @@ const CartContextProvider=({children})=>{
         localStorage.setItem("carrito",JSON.stringify(cartList))
         getQuantity(cartList)
     }
-    console.log(cartList)
     const clearCart=()=>{
         setCartList([])
     }
-    const removeFromCart=()=>{
+    const removeFromCart=(e, carrito, cantidadAEliminar)=>{
+        const encontrar= carrito.find((p)=> p.id === e.id)
+        encontrar.quantity=encontrar.quantity-cantidadAEliminar
+        const index= carrito.indexOf(encontrar)
 
+        if(encontrar.quantity<=0){
+            setCartList(carrito.splice(index,1))
+            localStorage.setItem("carrito",JSON.stringify(carrito))
+        }else if(cantidadAEliminar>encontrar.quantity){
+            return console.log("no se puede")
+        }
+
+        setCartList(carrito)
+        localStorage.setItem("carrito",JSON.stringify(carrito))
+        getQuantity(carrito)
+        console.log(carrito)
+        
     }
-
+    const removeProductFromCart=(e,carrito)=>{
+            const encontrar=carrito.find((p)=>p.id===e.id)
+            const index=carrito.indexOf(encontrar)
+            setCartList(carrito.splice(index,1))
+            localStorage.setItem("carrito", JSON.stringify(carrito))
+    }
     const getQuantity=(carrito)=>{
         let cantidades=carrito.reduce((acc, i)=>acc+i.quantity,0)
         return cantidades
     }
 
-    const paintCart=(cartList)=>{
-        cartList.map((p)=>{
-            return(
-                <div key={p.id}><img src={p.img} alt={p.name}/> <p>{p.name}</p></div>
-            )
-        })
-    }
 
     return(
-        <CartContext.Provider value={{cartList, addToCart, clearCart, removeFromCart, getQuantity, paintCart}}>
+        <CartContext.Provider value={{cartList, addToCart, clearCart, removeFromCart,removeProductFromCart, getQuantity}}>
             {children}
         </CartContext.Provider>
     )
