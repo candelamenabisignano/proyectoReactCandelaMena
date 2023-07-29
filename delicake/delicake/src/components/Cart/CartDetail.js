@@ -4,7 +4,7 @@ import { CartContext } from "../context/CartContext"
 
 
 const CartDetail = () => {
-    const {cartList, removeFromCart,removeProductFromCart, getQuantity} = useContext(CartContext)
+    const {cartList} = useContext(CartContext)
     const [count, setCount]=useState(0)
 
     const add= useCallback(()=>{
@@ -35,8 +35,8 @@ const CartDetail = () => {
                           <button onClick={()=>substract()}>-</button>
                           </div>
 
-                        <button onClick={()=>{removeFromCart(p, cartList, count, setCount(0), getQuantity(cartList))}} key={p.id}>eliminar</button>
-                        <button onClick={()=>{removeProductFromCart(p,cartList)}}>limpiar</button>
+                        <button key={p.id}>eliminar</button>
+                        <button>limpiar</button>
                       </div>
                     </div>
 

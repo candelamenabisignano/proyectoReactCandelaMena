@@ -7,7 +7,10 @@ const CartContextProvider=({children})=>{
 
     localStorage.setItem("carrito",JSON.stringify(cartList))
 
-
+    const getQuantity=()=>{
+        const cantidades=cartList.reduce((acc, i)=>acc=acc+i.quantity,0)
+        return cantidades
+}
 
     const addToCart=(producto, cantidadNueva)=>{
         const cantidad= cartList.some((prod)=> prod.id === producto.id)
@@ -26,38 +29,32 @@ const CartContextProvider=({children})=>{
     const clearCart=()=>{
         setCartList([])
     }
-    const removeFromCart=(e, carrito, cantidadAEliminar)=>{
-        const encontrar= carrito.find((p)=> p.id === e.id)
+    const removeFromCart=(e, cantidadAEliminar)=>{
+        const encontrar= cartList.find((p)=> p.id === e.id)
         encontrar.quantity=encontrar.quantity-cantidadAEliminar
-        const index= carrito.indexOf(encontrar)
+        const index= cartList.indexOf(encontrar)
 
         if(encontrar.quantity<=0){
-            setCartList(carrito.splice(index,1))
-            localStorage.setItem("carrito",JSON.stringify(carrito))
+            setCartList(cartList.splice(index,1))
+            localStorage.setItem("carrito",JSON.stringify(cartList))
         }else if(cantidadAEliminar>encontrar.quantity){
             return console.log("no se puede")
         }
 
-        setCartList(carrito)
-        localStorage.setItem("carrito",JSON.stringify(carrito))
-        getQuantity(carrito)
-        console.log(carrito)
+        setCartList(cartList)
+        localStorage.setItem("carrito",JSON.stringify(cartList))
+        getQuantity()
+        console.log(cartList)
         
     }
-    const removeProductFromCart=(e,carrito)=>{
-            const encontrar=carrito.find((p)=>p.id===e.id)
-            const index=carrito.indexOf(encontrar)
-            setCartList(carrito.splice(index,1))
-            localStorage.setItem("carrito", JSON.stringify(carrito))
-    }
-    const getQuantity=(carrito)=>{
-        let cantidades=carrito.reduce((acc, i)=>acc+i.quantity,0)
-        return cantidades
+
+    const removeProductFromCart=(e)=>{
+        setCartList(cartList.filter((p)=> {return p.id !== e.id}))
     }
 
 
     return(
-        <CartContext.Provider value={{cartList, addToCart, clearCart, removeFromCart,removeProductFromCart, getQuantity}}>
+        <CartContext.Provider value={{cartList, addToCart, clearCart, removeFromCart, removeProductFromCart, getQuantity}}>
             {children}
         </CartContext.Provider>
     )
