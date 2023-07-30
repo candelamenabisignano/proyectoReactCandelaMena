@@ -1,19 +1,12 @@
-import { useCallback, useContext, useState } from "react"
+import { useContext} from "react"
 import { CartContext } from "../context/CartContext"
+import ItemSubstract from "./ItemSubstract"
 
 
 
 const CartDetail = () => {
     const {cartList} = useContext(CartContext)
-    const [count, setCount]=useState(0)
 
-    const add= useCallback(()=>{
-        setCount(count+1)
-    },[count])
-    const substract= useCallback(()=>{
-        const condicion= count === 1 ? count : setCount(count-1)
-        return condicion
-    },[count])
   return (
     <div>
       <h1>mi carrito</h1>
@@ -29,14 +22,7 @@ const CartDetail = () => {
                         <h4>{p.name}</h4>
                         <p>{p.quantity}</p>
 
-                        <div className="flex">
-                          <button onClick={()=>add()}>+</button>
-                          <p>{count}</p>
-                          <button onClick={()=>substract()}>-</button>
-                          </div>
-
-                        <button key={p.id}>eliminar</button>
-                        <button>limpiar</button>
+                        <ItemSubstract item={p}/>
                       </div>
                     </div>
 
