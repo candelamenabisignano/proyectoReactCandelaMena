@@ -37,7 +37,6 @@ const CartContextProvider=({children})=>{
             cartList.splice(index,1)
             setCartList(cartList)
             getQuantity()
-            localStorage.setItem("carrito",JSON.stringify(cartList))
         }
         localStorage.setItem("carrito", JSON.stringify(cartList))
     }
