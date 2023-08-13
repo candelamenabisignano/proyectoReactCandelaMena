@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Error404 from './components/Error/Error404';
 import CartDetail from './components/Cart/CartDetail';
 import CartContextProvider from './components/context/CartContext';
+import Checkout from './components/checkout/Checkout';
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
               <Route path={"/category/:id"} element={<ItemListContainer/>} />
               <Route path={"/item/:id"} element={<ItemDetailContainer/>} />
               <Route path={"*"} element={<Error404/>} />
+              <Route path={"/checkout"} element={<Checkout/>}/>
       </Routes>
       </BrowserRouter>
       </CartContextProvider>

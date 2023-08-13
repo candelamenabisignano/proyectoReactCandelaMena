@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import json from "../../data/Products.json"
 export const CartContext=createContext()
 
 const CartContextProvider=({children})=>{
@@ -11,35 +10,43 @@ const CartContextProvider=({children})=>{
         const cantidad=cartList.reduce((acc,i)=>acc+i.quantity,0)
         return cantidad
     }
+
+    const cartReduce=()=>{
+        const total= cartList.reduce((acc, item)=> acc+ item.quantity*item.price,0)
+        return total
+    }
+
+    const IsInCart=(id)=>cartList.find((product) => product.id === id) ? true : false;
     const addToCart=(producto, cantidadNueva)=>{
-        const cantidad= cartList.some((prod)=> prod.id === producto.id)
-        if(!cantidad){
-            const encontrar= json.find((prod)=>prod.id === producto.id) 
-            setCartList([...cartList,{...encontrar, quantity: cantidadNueva}])
-            
+        if(IsInCart(producto.id)){
+            setCartList (cartList.map(product =>{
+                return product.id === producto.id ?{...product,quantity:product.quantity + cantidadNueva} : product
+              }))
         }else{
-            const encontrar= cartList.find((prod)=>prod.id===producto.id)
-            encontrar.quantity=encontrar.quantity+cantidadNueva
-            setCartList(cartList)
+            setCartList ([...cartList,{...producto,quantity:cantidadNueva}])
         }
-        getQuantity()
         localStorage.setItem("carrito",JSON.stringify(cartList))
-        console.log(cartList)
     }
     const clearCart=()=>{
         setCartList([])
     }
-    const removeFromCart=(e)=>{
-        const encontrar= cartList.find((p)=> p.id === e.id)
-        const index= cartList.indexOf(encontrar)
-        encontrar.quantity=encontrar.quantity-1
-        if(encontrar.quantity===0){
-            cartList.splice(index,1)
-            setCartList(cartList)
-            getQuantity()
-        }
-        localStorage.setItem("carrito", JSON.stringify(cartList))
-    }
+
+    const removeFromCart = (item) => {
+        const updatedCartList = cartList.map((product) => {
+            if (product.id === item.id) {
+              
+                if (product.quantity > 1) {
+                    return { ...product, quantity: product.quantity - 1 };
+                } else {
+                    return null;
+                }
+            } else {
+                return product;
+            }
+        }).filter(Boolean); 
+    
+        setCartList(updatedCartList);
+    };
 
     const removeProductFromCart=(e)=>{
         setCartList(cartList.filter((p)=> {return p.id !== e.id}))
@@ -47,7 +54,7 @@ const CartContextProvider=({children})=>{
     }
 
     return(
-        <CartContext.Provider value={{cartList, addToCart, clearCart, removeFromCart, removeProductFromCart, getQuantity}}>
+        <CartContext.Provider value={{setCartList,cartList, cartReduce, addToCart, clearCart, removeFromCart, removeProductFromCart, getQuantity}}>
             {children}
         </CartContext.Provider>
     )
