@@ -1,9 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { addDoc, collection, getFirestore} from "firebase/firestore";
+import swal from "sweetalert";
+import ItemListContainer from "../ItemListContainer/ItemListContainer";
+import { Link} from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Checkout = () => {
   const { cartList, cartReduce, setCartList} = useContext(CartContext);
+
   const [buyer, setBuyer] = useState({
     Name: "",
     Email: "",
@@ -25,12 +30,17 @@ const Checkout = () => {
   };
 
   const formSubmit = (e) => {
+    if((Email!=EmailConfirm)||((cartList.length)<1)){
+      e.preventDefault()
+      swal({title:"email incorrecto o carrito vacio", text:"porfavor vuelva a intentar", timer:1000, icon:"error", buttons:false})
+    }else{
       e.preventDefault();
       const total=cartReduce()
       const dia=new Date()
       const data = { buyer, myCart, total, dia };
       order(data);
       setCartList([])
+    }
   };
 
   const order = async (orderData) => {
@@ -45,8 +55,10 @@ const Checkout = () => {
     setMyCart([...cartList]);
   }, []);
 
+
   return (
-    <div className="flex">
+    <div>
+    <div className="flex justify-center">
       {!orderId &&  
       <>
       <div>
@@ -63,6 +75,7 @@ const Checkout = () => {
                   placeholder="nombre completo"
                   onChange={inputChange}
                   className="border-gray-200 border-2 h-[45px] w-[200%]"
+                  
                 />
               </div>
               <div>
@@ -85,6 +98,7 @@ const Checkout = () => {
                   placeholder="email"
                   onChange={inputChange}
                   className="border-gray-200 border-2 h-[45px] w-[200%]"
+                  id="1"
                 />
               </div>
               <div>
@@ -96,6 +110,7 @@ const Checkout = () => {
                   value={EmailConfirm}
                   onChange={inputChange}
                   className="border-gray-200 border-2 h-[45px] w-[200%]"
+                  id="2"
                 />
               </div>
               <div>
@@ -142,13 +157,14 @@ const Checkout = () => {
       </>
 }
       {orderId && 
-      <div className="flex justify-center">
-      <div className="flex flex-col">
-      <h1>felicitaciones!tu orden ha sido realizada</h1>
-      <h2>numero de orden: {orderId}</h2>
+      <div className="flex flex-col text-center mt-[150px]">
+        <h1 className="text-[40px]">felicidades!has completado tu compra</h1>
+        <h2 className="text-[28px]">tu numero de orden es :<strong>{orderId}</strong></h2>
+        <Link className='p-[7px_10px] block ease-out bg-pink-200 text-white no-underline rounded-[5px] hover:ease-out duration-500 hover:text-pink-200 hover:bg-transparent hover:border-pink-200 hover:border-[1px] transition-colors text-[20px]'>inicio</Link>
       </div>
-      </div>
+      
       }
+    </div>
     </div>
   );
 };

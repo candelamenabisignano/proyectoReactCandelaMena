@@ -2,14 +2,8 @@ import React from 'react'
 
 const Loader = () => {
   return (
-    <div>
-        <div className='relative flex gap-[0.3em] before:content-none before:absolute before:top-0 before:left-0 before:w-full before:h-[2em] before: blur-[45px] before:bg-pink-200'
-            <div class="loader__circle"></div>
-            <div class="loader__circle"></div>
-            <div class="loader__circle"></div>
-            <div class="loader__circle"></div>
-            <div class="loader__circle"></div>
-        </div>
+    <div className='flex justify-center mt-[220px]'>
+      <div className="rounded-full border-[7px] border-solid border-pink-200 border-l-transparent w-[50px] h-[50px] animate-spin"></div>
     </div>
   )
 }

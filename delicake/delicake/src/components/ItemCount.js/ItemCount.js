@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext';
 import { Link, useParams} from 'react-router-dom';
-import swal from 'sweetalert';
 import "../../App.css"
+import Swal from 'sweetalert2';
 
 
 const ItemCount = ({item}) => {
@@ -30,8 +30,7 @@ const ItemCount = ({item}) => {
       <p className='text-[20px] text-gray-500'>{count}</p>
       <button className='bg-pink-200 p-[3px_5px] text-white rounded-[2px] text-[15px]'>-</button>
     </div>
-    <Link to={`${count >0 ? "/" : `/item/${id}`} `} onClick={()=>{count > 0 ? addToCart(item, count) : swal({
-      title:"error",text:"ingrese un numero valido",icon:"error",button:"entendido"})}} className='p-[7px_30px] ease-out bg-pink-200 text-white no-underline rounded-[5px] hover:ease-out duration-500 hover:text-pink-200 hover:bg-transparent hover:border-pink-200 hover:border-[1px] transition-colors text-[17px]'>comprar</Link>
+    <Link to={`${count >0 ? "/" : `/item/${id}`} `} onClick={()=>{count > 0 ? addToCart(item, count,Swal.fire({toast:true, position:'top-right', title:"producto agregado", icon:'success', timer:1000, timerProgressBar:true, showConfirmButton:false}) ) : Swal.fire({title:"upss! ingreso un numero invalido", text:"vuelva a intentarlo", icon:"error", confirmButtonColor:"Pink"}) }} className='p-[7px_30px] ease-out bg-pink-200 text-white no-underline rounded-[5px] hover:ease-out duration-500 hover:text-pink-200 hover:bg-transparent hover:border-pink-200 hover:border-[1px] transition-colors text-[17px]'>comprar</Link>
     </div>
     
   )

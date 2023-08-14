@@ -3,6 +3,8 @@ import { CartContext } from "../context/CartContext"
 import ItemSubstract from "./ItemSubstract"
 import swal from "sweetalert"
 import { Link} from "react-router-dom"
+import { Toast } from "bootstrap"
+import Swal from "sweetalert2"
 
 
 
@@ -40,15 +42,15 @@ const CartDetail = () => {
       <section className="">
         <div className="flex justify-center"><h2 className="text-[25px]">total: ${cartReduce()}</h2></div>
         <div className="m-[40px] gap-[40px] flex justify-center">
-        <button className='p-[7px_30px] ease-out bg-pink-200 text-white no-underline rounded-[5px] hover:ease-out duration-500 hover:text-pink-200 hover:bg-transparent hover:border-pink-200 hover:border-[1px] transition-colors text-[20px]' onClick={()=> swal({title:"¿estas seguro que quieres borrar todo tu carrito?", icon:"warning", buttons:true, dangerMode:true}).then((willDelete)=>{
-          if(willDelete){
-            swal({title:"se ha limpiado el carrito con exito", icon:"success"})
+        <button className='p-[7px_30px] ease-out bg-pink-200 text-white no-underline rounded-[5px] hover:ease-out duration-500 hover:text-pink-200 hover:bg-transparent hover:border-pink-200 hover:border-[1px] transition-colors text-[20px]' onClick={()=> cartList <1 ? Swal.fire({toast:true,title:"su carrito ya se encuentra vacio",icon:"question", timer:1000, position:"top-right", showConfirmButton:false, timerProgressBar:true}): Swal.fire({title:"¿estas seguro que quieres borrar todo tu carrito?", icon:"warning", showCancelButton:true, showConfirmButton:true}).then((willDelete)=>{
+          if(willDelete.isConfirmed){
+            Swal.fire({title:"se ha limpiado el carrito con exito", icon:"success", timer:1000, showConfirmButton:false})
             clearCart()
           }else{
-            swal({title:"se ha cancelado el proceso",icon:"error"})
+            Swal.fire({title:"se ha cancelado el proceso",icon:"error", showConfirmButton:false, footer:"", timer:1000})
           }
         })}>limpiar carrito</button>
-        <Link to={cartList <1 ? "/cart" : "/checkout"} className='p-[7px_30px] ease-out bg-pink-200 text-white no-underline rounded-[5px] hover:ease-out duration-500 hover:text-pink-200 hover:bg-transparent hover:border-pink-200 hover:border-[1px] transition-colors text-[20px]' onClick={()=> cartList < 1 ? swal({title:"ups!no tienes productos en tu carrito"}) : swal({title:"redirigiendo al checkout"})}>checkout</Link>
+        <Link to={cartList <1 ? "/cart" : "/checkout"} className='p-[7px_30px] ease-out bg-pink-200 text-white no-underline rounded-[5px] hover:ease-out duration-500 hover:text-pink-200 hover:bg-transparent hover:border-pink-200 hover:border-[1px] transition-colors text-[20px]' onClick={()=> cartList < 1 ? Swal.fire({title:"ups!no tienes productos en tu carrito", icon:"error", confirmButtonColor:"pink"}) : true}>checkout</Link>
         </div>
       </section>
     </div>
