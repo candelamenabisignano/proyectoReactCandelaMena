@@ -58,7 +58,7 @@ const Checkout = () => {
 
   return (
     <div>
-    <div className="flex justify-center">
+    <div className="flex justify-center ">
       {!orderId &&  
       <>
       <div>
@@ -157,10 +157,11 @@ const Checkout = () => {
       </>
 }
       {orderId && 
-      <div className="flex flex-col text-center mt-[150px]">
-        <h1 className="text-[40px]">felicidades!has completado tu compra</h1>
-        <h2 className="text-[28px]">tu numero de orden es :<strong>{orderId}</strong></h2>
-        <Link className='p-[7px_10px] block ease-out bg-pink-200 text-white no-underline rounded-[5px] hover:ease-out duration-500 hover:text-pink-200 hover:bg-transparent hover:border-pink-200 hover:border-[1px] transition-colors text-[20px]'>inicio</Link>
+      <div className="text-center mt-[150px]">
+        <h1 className="text-[30px]">felicidades!has completado tu compra</h1>
+        <h2 className="text-[28px] pb-[50px]">tu numero de orden es :<strong>{orderId}</strong></h2>
+        
+        <Link to={"/"} className='p-[9px_70px] mt-[50px] ease-out bg-pink-200 text-white no-underline rounded-[5px] hover:ease-out duration-500 hover:text-pink-200 hover:bg-transparent hover:border-pink-200 hover:border-[1px] transition-colors text-[20px]'>inicio</Link>
       </div>
       
       }
